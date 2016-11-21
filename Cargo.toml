@@ -1,0 +1,10 @@
+[package]
+name = "bf-rs"
+description = "A basic Brainf**k interpreter written purely in Rust. Aims are to be independent of libraries, fast, easy to read and extendable"
+version = "0.1.0"
+authors = ["harrison.rigg@student.ntschools.net"]
+license = "MIT"
+keywords = ["brainfuck", "interpreter", "compiler"]
+
+[dependencies]
+libc = "*"
