@@ -5,6 +5,8 @@ version = "0.1.0"
 authors = ["harrison.rigg@student.ntschools.net"]
 license = "MIT"
 keywords = ["brainfuck", "interpreter", "compiler"]
+readme = "README.md"
+repository = "https://github.com/TacoCoder/rs-bf"
 
 [dependencies]
 libc = "*"
