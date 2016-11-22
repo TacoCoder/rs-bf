@@ -116,7 +116,7 @@ fn main() {
                                 .takes_value(true)
                                 .required(false))
                               .arg(Arg::with_name("FILE")
-                                .help("The file to interpret")
+                                .help("The file to interpret. If left blank stdin will be used instead.")
                                 .required(false)
                                 .index(1))
                               .get_matches();
