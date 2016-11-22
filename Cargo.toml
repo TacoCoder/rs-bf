@@ -10,3 +10,4 @@ repository = "https://github.com/TacoCoder/rs-bf"
 
 [dependencies]
 libc = "*"
+clap = "2"
