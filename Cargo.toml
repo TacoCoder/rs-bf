@@ -10,4 +10,4 @@ repository = "https://github.com/TacoCoder/rs-bf"
 
 [dependencies]
 libc = "*"
-clap = "2"
+clap = {version = "*", features = ["yaml"]}

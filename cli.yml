@@ -1,0 +1,22 @@
+name: rs-bf
+version: "0.1.0"
+author: Harrison Rigg <harrison.rigg@student.ntschools.net>
+about: A simple brainf**k interpreter written in Rust
+args:
+    - stack-size:
+        short: s
+        long: stack-size
+        value_name: STACK-SIZE
+        help: Sets the size to be used for the stack/tape
+        takes_value: true
+        required: false
+    - stack-value:
+        short: i
+        long: stack-value
+        value_name: STACK-VALUE
+        help: The value that will fill the stack/tape initialy
+        takes_value: true
+        required: false
+    - FILE:
+        help: The file to interpret. If left blank STDIN will be used instead.
+        required: false
