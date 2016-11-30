@@ -1,7 +1,7 @@
 extern crate libc;
 extern crate clap;
 
-use std::io::{ Read, BufRead, Write, stdout, stdin };
+use std::io::{ Read, BufRead, stdin };
 use std::fs::File;
 
 use clap::{ Arg, App };

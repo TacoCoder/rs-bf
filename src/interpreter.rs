@@ -20,7 +20,7 @@ impl Interpreter {
 
         // Get a vector of bytes to read through
         let mut char_vec: Vec<u8> = Vec::new();
-        (source.as_ref() as &[u8]).read_to_end(&mut char_vec);
+        (source.as_ref() as &[u8]).read_to_end(&mut char_vec).unwrap();
 
         // Loop through all the bytes
         let mut i = 0;
@@ -46,11 +46,11 @@ impl Interpreter {
                 // . -- Prints the current stack value to STDOUT
                 b'.' => {
                     print!("{}", self.stack[self.stack_ptr] as char);
-                    stdout().flush();
+                    stdout().flush().unwrap();
                 },
                 // , -- Places a char from STDIN into the current stack value
                 b',' => {
-                    let mut ic = 0;
+                    let ic: i32;
                     unsafe { ic = libc::getchar(); }
                     self.stack[self.stack_ptr] = ic as u8;
                 },
