@@ -6,6 +6,6 @@ Leaving `[FILE]` blank uses stdin instead.
 
 ##### Coming Soon
 * ~~More/better command line arguments~~
-* Cleaner code with comments
+* ~~Cleaner code with comments~~
 * A compiler
 * A library along with a better driver
