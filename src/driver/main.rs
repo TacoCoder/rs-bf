@@ -1,4 +1,5 @@
 extern crate libc;
+extern crate rs_bf;
 
 #[macro_use]
 extern crate clap;
@@ -8,12 +9,11 @@ use std::fs::File;
 
 use clap::App;
 
-mod interpreter;
-use interpreter::Interpreter;
+use rs_bf::interpreter::Interpreter;
 
 fn main() {
     // Parse command line args
-    let yaml = load_yaml!("../cli.yml");
+    let yaml = load_yaml!("../../cli.yml");
     let arg_matches = App::from_yaml(yaml).get_matches();
 
     // Set the stack size
