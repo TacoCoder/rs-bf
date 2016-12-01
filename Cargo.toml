@@ -1,7 +1,7 @@
 [package]
 name = "rs-bf"
 description = "A basic Brainf**k interpreter written purely in Rust. Aims are to be independent of libraries, fast, easy to read and extendable"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["harrison.rigg@student.ntschools.net"]
 license = "MIT"
 keywords = ["brainfuck", "interpreter", "compiler"]
