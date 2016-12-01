@@ -1,6 +1,6 @@
 extern crate libc;
 
-use std::io::{stdout, Read, Write};
+use std::io::{stdout, Write};
 
 // Represents a Interpreter, which holds a the tape and the tape ptr
 pub struct Interpreter {
@@ -19,8 +19,7 @@ impl Interpreter {
     pub fn interp(&mut self, source: String) {
 
         // Get a vector of bytes to read through
-        let mut char_vec: Vec<u8> = Vec::new();
-        (source.as_ref() as &[u8]).read_to_end(&mut char_vec).unwrap();
+        let char_vec: Vec<u8> = source.into_bytes();
 
         // Loop through all the bytes
         let mut i = 0;
@@ -29,11 +28,11 @@ impl Interpreter {
             match c {
                 // > -- Stack ptr forwards
                 b'>' => {
-                    self.stack_ptr = self.stack_ptr.wrapping_add(1);
+                    self.stack_ptr = (self.stack_ptr + 1) % self.stack.len();
                 },
                 // < -- Stack ptr backwards
                 b'<' => {
-                    self.stack_ptr = self.stack_ptr.wrapping_sub(1);
+                    self.stack_ptr = (self.stack_ptr - 1) % self.stack.len();
                 },
                 // + -- Add to current stack value
                 b'+' => {
@@ -62,7 +61,7 @@ impl Interpreter {
                         // '[' and decrements when we find a ']', if nested is zero and were on a
                         // ']', we end the jump ahead
                         let mut nested = 0;
-                        loop { 
+                        loop {
                             i+=1;
                             if char_vec[i] == b']' && nested == 0 {
                                 i+=1;
@@ -74,7 +73,7 @@ impl Interpreter {
                             }
 
                             if char_vec[i] == b'[' {
-                                nested += 1; 
+                                nested += 1;
                             };
                         }
                     }
@@ -96,7 +95,7 @@ impl Interpreter {
                                 nested -= 1;
                             }
 
-                            if char_vec[i] == b']' { 
+                            if char_vec[i] == b']' {
                                 nested += 1;
                             }
                         }
@@ -104,7 +103,7 @@ impl Interpreter {
                 },
                 // Anything else, leave it be. Brainf**k ignores all other characters :) :) :)
                 _   => {
-                
+
                 }
             }
             // Jump ahead through the source
@@ -113,5 +112,3 @@ impl Interpreter {
         }
     }
 }
-
-

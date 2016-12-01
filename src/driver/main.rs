@@ -18,17 +18,11 @@ fn main() {
 
     // Set the stack size
     let stack_size_str = arg_matches.value_of("stack-size").unwrap_or("30000");
-    let stack_size = match stack_size_str.parse::<usize>() {
-        Ok(ok) => ok,
-        Err(_) => panic!("Please enter a valid number for stack-size")
-    };
+    let stack_size = stack_size_str.parse::<usize>().expect("Please enter a valid number for stack-size");
 
     // Set the initial stack value
     let stack_value_str = arg_matches.value_of("stack-value").unwrap_or("0");
-    let stack_value = match stack_value_str.parse::<u8>() {
-        Ok(ok) => ok,
-        Err(_) => panic!("Please enter a valid number for stack-value")
-    };
+    let stack_value = stack_value_str.parse::<u8>().expect("Please enter a valid number for stack-value");
 
     // Create the interpreter with the default args/command line args
     let mut interp = Interpreter::new(stack_size, stack_value);
