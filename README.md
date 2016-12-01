@@ -1,4 +1,5 @@
 ## rs-bf
+[![Build Status](https://travis-ci.org/TacoCoder/rs-bf.svg?branch=master)](https://travis-ci.org/TacoCoder/rs-bf)
 A simple Brainf**k interpreter written in pure Rust
 
 Example Usage: `rs-bf some_file.bf --stack-size 30000 --stack-value 0`   
