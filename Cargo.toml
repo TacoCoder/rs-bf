@@ -8,6 +8,14 @@ keywords = ["brainfuck", "interpreter", "compiler"]
 readme = "README.md"
 repository = "https://github.com/TacoCoder/rs-bf"
 
+[lib]
+name = "rs_bf"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rs_bf-driver"
+path = "src/driver/main.rs"
+
 [dependencies]
 libc = "*"
 clap = {version = "*", features = ["yaml"]}
