@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/TacoCoder/rs-bf.svg?branch=master)](https://travis-ci.org/TacoCoder/rs-bf)
 
 A simple Brainf**k interpreter written in pure Rust.
-Wrote this as a learning project, not meant to be practicle, but if you have any suggestions let me know!
+Wrote this as a learning project, not meant to be practical, but if you have any suggestions let me know!
 
 Example Usage: `rs-bf some_file.bf --stack-size 30000 --stack-value 0`   
 Leaving `[FILE]` blank uses stdin instead.
