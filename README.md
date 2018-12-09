@@ -1,5 +1,5 @@
 ## rs-bf
-[![Build Status](https://travis-ci.org/TacoCoder/rs-bf.svg?branch=master)](https://travis-ci.org/TacoCoder/rs-bf)
+[![Build Status](https://travis-ci.org/psr31/rs-bf.svg?branch=master)](https://travis-ci.org/psr31/rs-bf)
 
 A simple Brainf**k interpreter written in pure Rust.
 Wrote this as a learning project, not meant to be practical, but if you have any suggestions let me know!
